@@ -16,3 +16,17 @@ function selectionSort(&$arr)
         $arr[$min_index] = $temp;
     }
 }
+
+if (isset($_GET['numbers'])) {
+    $numbers = $_GET['numbers'];
+
+    $numbers_arr = explode(',', $numbers);
+
+    $numbers_arr = array_map('intval', $numbers_arr);
+
+    selectionSort($numbers_arr);
+
+    echo json_encode(['numbers' => $numbers_arr]);
+} else {
+    echo json_encode(['error' => 'error']);
+}
