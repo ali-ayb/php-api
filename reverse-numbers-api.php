@@ -1,9 +1,8 @@
 <?php
 
 
-// $string = $_GET['string'];
+$string = $_GET['string'];
 
-$string = 'hello123';
 $numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 $temp_arr = [];
 
@@ -21,4 +20,4 @@ for ($index = 0; $index < strlen($string); $index++) {
     }
 }
 
-echo $string;
+echo json_encode(['string' => $string]);
